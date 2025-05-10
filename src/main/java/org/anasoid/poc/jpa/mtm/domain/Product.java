@@ -22,6 +22,7 @@ public class Product extends BaseModel {
     @Column(name = "id")
     private Long id;
 
+
     @Column(name = "code")
     private String code;
 
@@ -115,6 +116,7 @@ public class Product extends BaseModel {
 
     public Product addCatgories(Category category) {
         this.catgories.add(category);
+        category.getProducts().add(this);
         return this;
     }
 

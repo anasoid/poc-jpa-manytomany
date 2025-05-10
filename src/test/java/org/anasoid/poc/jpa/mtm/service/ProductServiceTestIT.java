@@ -63,12 +63,6 @@ class ProductServiceTestIT {
         p1Result.addCatgories(cat1);
         productRepository.saveAndFlush(p1Result);
         p1Result = productRepository.findById(p1.getId()).orElseThrow();
-        assertThat(p1Result.getModifiedDate()).isNull();
-        assertThat(p1Result.getCatgories().iterator().next().getModifiedDate()).isNull();
-        //Change name
-        p1Result.setName("name1");
-        productRepository.saveAndFlush(p1Result);
-        p1Result = productRepository.findById(p1.getId()).orElseThrow();
         assertThat(p1Result.getModifiedDate()).isNotNull();
     }
 

@@ -1,9 +1,6 @@
 package org.anasoid.poc.jpa.mtm.domain;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.MappedSuperclass;
-import jakarta.persistence.PrePersist;
-import jakarta.persistence.PreUpdate;
+import jakarta.persistence.*;
 
 import java.io.Serializable;
 import java.time.Instant;
@@ -14,6 +11,9 @@ public abstract class BaseModel implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    @Version
+    @Column(name = "version")
+    private Long version;
 
     @Column(name = "modified_date")
     private Instant modifiedDate;
