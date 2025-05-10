@@ -1,0 +1,27 @@
+
+entity Category {
+  code String
+  name String
+  description String
+  modifiedDate Instant
+  createdDate Instant
+
+}
+
+entity Product {
+  code String
+  name String
+  description String
+  modifiedDate Instant
+  createdDate Instant
+}
+
+relationship ManyToMany {
+  Product{catgories(code)} to Category{products}
+}
+
+// Set pagination options
+paginate Category with infinite-scroll
+paginate Product with pagination
+service all with serviceImpl except Category
+
