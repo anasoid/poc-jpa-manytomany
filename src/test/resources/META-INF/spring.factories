@@ -1,0 +1,3 @@
+org.springframework.test.context.ContextCustomizerFactory = \
+    org.anasoid.poc.jpa.mtm.config.\
+    SqlTestContainersSpringContextCustomizerFactory
