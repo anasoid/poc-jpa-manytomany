@@ -104,7 +104,7 @@ export const ProductUpdate = () => {
                 name="modifiedDate"
                 data-cy="modifiedDate"
                 type="datetime-local"
-                placeholder="YYYY-MM-DD HH:mm"
+                placeholder="YYYY-MM-DD HH:mm:ss"
               />
               <ValidatedField
                 label="Created Date"
@@ -113,7 +113,7 @@ export const ProductUpdate = () => {
                 name="createdDate"
                 data-cy="createdDate"
                 type="datetime-local"
-                placeholder="YYYY-MM-DD HH:mm"
+                placeholder="YYYY-MM-DD HH:mm:ss"
               />
               <ValidatedField label="Catgories" id="product-catgories" data-cy="catgories" type="select" multiple name="catgories">
                 {categories

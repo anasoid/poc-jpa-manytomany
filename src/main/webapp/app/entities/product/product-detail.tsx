@@ -4,7 +4,7 @@ import { Button, Col, Row } from 'reactstrap';
 import { TextFormat } from 'react-jhipster';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { APP_DATE_FORMAT } from 'app/config/constants';
+import { APP_TIMESTAMP_FORMAT } from 'app/config/constants';
 import { useAppDispatch, useAppSelector } from 'app/config/store';
 
 import { getEntity } from './product.reducer';
@@ -44,13 +44,15 @@ export const ProductDetail = () => {
             <span id="modifiedDate">Modified Date</span>
           </dt>
           <dd>
-            {productEntity.modifiedDate ? <TextFormat value={productEntity.modifiedDate} type="date" format={APP_DATE_FORMAT} /> : null}
+            {productEntity.modifiedDate ? (
+              <TextFormat value={productEntity.modifiedDate} type="date" format={APP_TIMESTAMP_FORMAT} />
+            ) : null}
           </dd>
           <dt>
             <span id="createdDate">Created Date</span>
           </dt>
           <dd>
-            {productEntity.createdDate ? <TextFormat value={productEntity.createdDate} type="date" format={APP_DATE_FORMAT} /> : null}
+            {productEntity.createdDate ? <TextFormat value={productEntity.createdDate} type="date" format={APP_TIMESTAMP_FORMAT} /> : null}
           </dd>
           <dt>Catgories</dt>
           <dd>

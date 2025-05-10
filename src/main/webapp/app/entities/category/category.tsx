@@ -5,7 +5,7 @@ import { Button, Table } from 'reactstrap';
 import { TextFormat, getPaginationState } from 'react-jhipster';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSort, faSortDown, faSortUp } from '@fortawesome/free-solid-svg-icons';
-import { APP_DATE_FORMAT } from 'app/config/constants';
+import { APP_TIMESTAMP_FORMAT } from 'app/config/constants';
 import { ASC, DESC, ITEMS_PER_PAGE } from 'app/shared/util/pagination.constants';
 import { overridePaginationStateWithQueryParams } from 'app/shared/util/entity-utils';
 import { useAppDispatch, useAppSelector } from 'app/config/store';
@@ -158,10 +158,12 @@ export const Category = () => {
                     <td>{category.name}</td>
                     <td>{category.description}</td>
                     <td>
-                      {category.modifiedDate ? <TextFormat type="date" value={category.modifiedDate} format={APP_DATE_FORMAT} /> : null}
+                      {category.modifiedDate ? (
+                        <TextFormat type="date" value={category.modifiedDate} format={APP_TIMESTAMP_FORMAT} />
+                      ) : null}
                     </td>
                     <td>
-                      {category.createdDate ? <TextFormat type="date" value={category.createdDate} format={APP_DATE_FORMAT} /> : null}
+                      {category.createdDate ? <TextFormat type="date" value={category.createdDate} format={APP_TIMESTAMP_FORMAT} /> : null}
                     </td>
                     <td className="text-end">
                       <div className="btn-group flex-btn-group-container">
